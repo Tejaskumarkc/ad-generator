@@ -1,0 +1,217 @@
+:root {
+    --primary-bg: #1a1a2e;
+    --secondary-bg: #16213e;
+    --accent-color: #0f3460;
+    --primary-text: #e94560;
+    --secondary-text: #ffffff;
+    --disabled-color: #535353;
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--secondary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    max-height: 800px;
+    background-color: var(--secondary-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-header {
+    padding: 20px;
+    background-color: var(--accent-color);
+    text-align: center;
+    border-bottom: 2px solid var(--primary-text);
+}
+
+.game-header h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    color: var(--primary-text);
+    font-size: 2em;
+    text-shadow: 0 0 10px var(--primary-text);
+}
+
+#coin-balance-container {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.coin-icon {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.game-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#character {
+    width: 150px;
+    height: 150px;
+    background-image: url('https://storage.googleapis.com/gemini-codelab-project-storage/038823a4-811c-42db-9d8d-3081e220c572.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+}
+
+#character:active {
+    transform: scale(0.9);
+}
+
+#character.idle {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.game-footer {
+    padding: 20px;
+    background-color: var(--accent-color);
+}
+
+#reward-ad-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(45deg, #e94560, #ff7e5f);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#reward-ad-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+}
+
+#reward-ad-btn:disabled {
+    background: var(--disabled-color);
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Modals */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--secondary-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 85%;
+    max-width: 350px;
+    border: 1px solid var(--primary-text);
+    box-shadow: 0 0 20px var(--primary-text);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--primary-text);
+    font-family: var(--font-display);
+}
+
+#message-close-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 1px solid var(--primary-text);
+    background-color: transparent;
+    color: var(--primary-text);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#message-close-btn:hover {
+    background-color: var(--primary-text);
+    color: white;
+}
+
+.ad-content .ad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ad-content .ad-header #ad-timer {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.ad-content .ad-body {
+    height: 200px;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.ad-content .ad-body span {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

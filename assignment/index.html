@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Clicker - Ad Reward Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta name="70208da0172022d313e3d0e4ba63f12db775454d" content="70208da0172022d313e3d0e4ba63f12db775454d" />
+
+</head>
+<body>
+    <div id="game-container">
+        <header class="game-header">
+            <h1>Cosmic Clicker</h1>
+            <div id="coin-balance-container">
+                <span class="coin-icon">💰</span>
+                <span id="coin-balance">0</span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div id="character" class="idle"></div>
+            <p>Click the astronaut to earn coins!</p>
+        </main>
+
+        <footer class="game-footer">
+            <button id="reward-ad-btn">
+                <span class="icon">💎</span> Watch Ad for 100 Coins
+            </button>
+        </footer>
+    </div>
+
+    <div id="ad-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content ad-content">
+            <div class="ad-header">
+                <h3>Sponsored Content</h3>
+                <div id="ad-timer">Ad closes in 5s</div>
+            </div>
+            <div class="ad-body">
+                <p>Your awesome ad appears here!</p>
+                <span>This is a simulated ad for demonstration.</span>
+
+                <script>
+(function(xbr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xbr || {};
+s.src = "\/\/vainspring.com\/bPX-Vcs.d\/Gplo0kYaW\/cT\/xeBm\/9YukZ\/UulAk_PoTBY\/1ZM\/TNQx2eMiTAUftjNYjKUgxxN\/DeYfx-Nygg";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div id="message-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3 id="message-title"></h3>
+            <p id="message-text"></p>
+            <button id="message-close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
